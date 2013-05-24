@@ -6,6 +6,19 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
+    //Debug stag
+    public final static String TAG = "RIMATYODEBUG";
+
+    //Request code for UI to show with startActivityForResult
+    final static int RC_SELECT_PLAYERS = 10000;
+    final static int RC_INVITATION_INBOX = 10001;
+    final static int RC_WAITING_ROOM = 10002;
+
+    private boolean loggedIn = false;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
