@@ -15,7 +15,7 @@
     android:background="@drawable/app_background"
     tools:context=".MainActivity"
     android:hapticFeedbackEnabled="false"
-    android:id="sign_in_screen">
+    android:id="@+id/signin_screen">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
