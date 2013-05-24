@@ -1,1 +1,2 @@
-include ':Rimatyo'
+include ':libraries:BaseGameUtils', ':google-play-services_lib', ':Rimatyo'
+

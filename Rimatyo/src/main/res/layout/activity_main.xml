@@ -78,7 +78,8 @@
             tools:context=".MainActivity"
             android:hapticFeedbackEnabled="false"
             android:id="@+id/main_menu_screen"
-            style="@style/LLScreen">
+            style="@style/LLScreen"
+            android:visibility="visible">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
