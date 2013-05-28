@@ -1,2 +1,1 @@
-include ':libraries:BaseGameUtils', ':google-play-services_lib', ':Rimatyo'
-
+include ':libproject:support-v4', ':libproject:google-play-services_lib', ':project-files:rimatyo'

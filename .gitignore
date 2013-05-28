@@ -1,13 +1,8 @@
-*.iml
-*.iws
-*.ipr
-.idea/
-.gradle/
 local.properties
+build
+.gradle
+out
 
-*/build/
 
-*~
 *.swp
-
 .DS_Store
