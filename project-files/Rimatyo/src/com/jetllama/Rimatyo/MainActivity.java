@@ -16,6 +16,7 @@
 
 package com.jetllama.Rimatyo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.games.GamesClient;
 import com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
 import com.google.android.gms.games.multiplayer.realtime.RealTimeMessageReceivedListener;
@@ -43,7 +45,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     //Request code for UI to show with startActivityForResult
     final static int RC_SELECT_PLAYERS = 10000;
     final static int RC_INVITATION_INBOX = 10001;
-    final static int RC_WAITING_ROOM = 10002;
+    final static int RC_PLAYER_LOBBY = 10002;
 
     // request codes we use when invoking an external activity
     final int RC_RESOLVE = 5000, RC_UNUSED = 5001;
@@ -67,7 +69,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     //All the screens we have
     final static int[] SCREENS= {
             R.id.signin_screen,
-            R.id.main_menu_screen
+            R.id.main_menu_screen,
+            R.id.waiting_screen
     };
 
 
@@ -87,6 +90,31 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     protected void onResume() {
         super.onResume();
         signedIn = isSignedIn();
+    }
+
+    public void onStop() {
+        allowScreenSleep(true);
+
+        super.onStop();
+    }
+
+    @Override
+    protected void onActivityResult(int request, int response, Intent data) {
+        super.onActivityResult(request, response, data);
+
+        switch(request){
+
+            case RC_PLAYER_LOBBY:
+                if(response == GamesActivityResultCodes.RESULT_LEFT_ROOM || response == Activity.RESULT_CANCELED)
+                    leaveRoom();
+
+        }
+    }
+
+    private void leaveRoom() {
+        allowScreenSleep(true);
+        Log.d(TAG, "Leaving room.");
+        switchToScreen(R.id.main_menu_screen);
     }
 
     @Override
@@ -145,6 +173,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     @Override
     public void onLeftRoom(int statusCode, String s) {
         Log.d(TAG, "onLeftRoom, code " + statusCode);
+
         switchToScreen(R.id.main_menu_screen);
 
     }
@@ -240,6 +269,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         rtmConfigBuilder.setRoomStatusUpdateListener(this);
         rtmConfigBuilder.setAutoMatchCriteria(autoMatchCriteria);
 
+        switchToScreen(R.id.waiting_screen);
         getGamesClient().createRoom(rtmConfigBuilder.build());
 
 
@@ -323,6 +353,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     public void showWaitingRoom(Room room){
         int MIN_PLAYERS = 2;
         Intent i = getGamesClient().getRealTimeWaitingRoomIntent(room, MIN_PLAYERS);
-        startActivityForResult(i, RC_WAITING_ROOM);
+        startActivityForResult(i, RC_PLAYER_LOBBY);
     }
 }

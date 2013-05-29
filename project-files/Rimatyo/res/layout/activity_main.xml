@@ -150,4 +150,31 @@
             android:layout_alignBottom="@+id/leaderboardButton"
             android:layout_alignRight="@+id/rankedMatchButton"/>
     </RelativeLayout>
+    <!-- Waiting Screen -->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/app_background"
+            tools:context=".MainActivity"
+            android:hapticFeedbackEnabled="false"
+            android:id="@+id/waiting_screen"
+            style="@style/LLScreen" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/waiting_message"
+            android:textSize="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkTextColor"
+            android:textScaleX="1.1"
+            android:id="@+id/waitingText"/>
+
+            </RelativeLayout>
 </FrameLayout>
+
