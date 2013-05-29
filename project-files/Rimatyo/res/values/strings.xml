@@ -22,5 +22,8 @@
     <string name="signing_in">Signing in with Google</string>
     <string name="signing_out">Signing out</string>
 
+    <string name="achievements_not_available">Please sign in to view achievements.</string>
+    <string name="leaderboards_not_available">Please sign in to view leaderboards.</string>
+
 
 </resources>

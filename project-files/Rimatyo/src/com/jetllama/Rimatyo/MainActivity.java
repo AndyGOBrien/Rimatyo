@@ -43,13 +43,21 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     final static int RC_INVITATION_INBOX = 10001;
     final static int RC_WAITING_ROOM = 10002;
 
+    // request codes we use when invoking an external activity
+    final int RC_RESOLVE = 5000, RC_UNUSED = 5001;
+
     private boolean signedIn = false;
     private int currentScreen = -1;
 
     //All the buttons we need to attach a listener to
     final static int[] CLICKABLES = {
             R.id.GoogleSignInButton,
-            R.id.GoogleSignOutButton
+            R.id.GoogleSignOutButton,
+            R.id.quickPlayButton,
+            R.id.formTeamButton,
+            R.id.rankedMatchButton,
+            R.id.achievementButton,
+            R.id.leaderboardButton
     };
 
     //All the screens we have
@@ -72,6 +80,12 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        signedIn = isSignedIn();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -82,6 +96,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     //Go to the main screen when the app is opened (or login if not logged in)
     @Override
     protected void onStart() {
+        signedIn = isSignedIn();
         switchToScreen(R.id.main_menu_screen);
         super.onStart();
     }
@@ -97,6 +112,14 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             case R.id.GoogleSignOutButton:
                 signOut();
                 switchToScreen(R.id.signin_screen);
+                break;
+
+            case R.id.achievementButton:
+                showAchievements();
+                break;
+
+            case R.id.leaderboardButton:
+                showLeaderboards();
                 break;
         }
 
@@ -129,6 +152,23 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         signedIn = true;
         switchToScreen(R.id.main_menu_screen);
+
+    }
+
+    public void showAchievements() {
+        if (isSignedIn()) {
+            startActivityForResult(getGamesClient().getAchievementsIntent(), RC_UNUSED);
+        } else {
+            showAlert(getString(R.string.achievements_not_available));
+        }
+    }
+
+    public void showLeaderboards(){
+        if (isSignedIn()) {
+            startActivityForResult(getGamesClient().getAllLeaderboardsIntent(), RC_UNUSED);
+        } else {
+            showAlert(getString(R.string.leaderboards_not_available));
+        }
 
     }
 }
