@@ -3,6 +3,7 @@ apply plugin: 'android'
 dependencies {
     compile project(':libproject:support-v4')
     compile project(':libproject:google-play-services_lib')
+    compile project(':libproject:BaseGameUtils')
 }
 
 android {
