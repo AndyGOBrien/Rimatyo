@@ -1,0 +1,17 @@
+apply plugin: 'android-library'
+
+dependencies {
+    compile project(':libproject:support-v4')
+    compile project(':libproject:google-play-services_lib')
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "17.0.0"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+}

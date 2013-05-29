@@ -20,17 +20,20 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.google.example.games.basegameutils.BaseGameActivity;
 import com.jetllama.Rimatyo.R;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-public class MainActivity extends Activity implements View.OnClickListener{
+public class MainActivity extends BaseGameActivity implements View.OnClickListener {
 
     //Debug stag
     public final static String TAG = "RIMATYODEBUG";
@@ -58,20 +61,20 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         for(int id: CLICKABLES)
             findViewById(id).setOnClickListener(this);
+
+        setSignInMessages(getString(R.string.signing_in), getString(R.string.signing_out));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
 
         return true;
     }
@@ -83,17 +86,22 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onStart();
     }
 
+
     //-----OnClick Listeners
     public void onClick(View v){
-
-
         switch(v.getId()){
             case R.id.GoogleSignInButton:
+                beginUserInitiatedSignIn();
+                break;
 
+            case R.id.GoogleSignOutButton:
+                signOut();
+                switchToScreen(R.id.signin_screen);
                 break;
         }
 
     }
+
 
     public void switchToScreen(int newScreenID){
 
@@ -111,11 +119,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
 
     public void onSignInFailed() {
-
+        Log.d(TAG, "Sign-in failed.");
+        Toast.makeText(getApplicationContext(), "Unable to sign in...", 300);
     }
 
 
     public void onSignInSucceeded() {
+        Log.d(TAG, "Successfully signed in");
+
+        signedIn = true;
+        switchToScreen(R.id.main_menu_screen);
 
     }
 }

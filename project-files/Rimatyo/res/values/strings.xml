@@ -17,11 +17,10 @@
 <resources>
 
     <string name="app_name">Rimatyo</string>
-    <string name="action_settings" >Settings
-    </string>
-    <string name="hello_world" >Hello world!
-    </string>
+    <string name="action_settings" >Settings </string>
     <string name = "login_message">Rimatyo relies on Google+ for matchmaking, achievements, and leaderboards. Please sign in.</string>
+    <string name="signing_in">Signing in with Google</string>
+    <string name="signing_out">Signing out</string>
 
 
 </resources>

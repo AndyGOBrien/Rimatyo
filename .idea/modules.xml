@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/libproject/BaseGameUtils/BaseGameUtils.iml" filepath="$PROJECT_DIR$/libproject/BaseGameUtils/BaseGameUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-files/Rimatyo/Rimatyo.iml" filepath="$PROJECT_DIR$/project-files/Rimatyo/Rimatyo.iml" />
       <module fileurl="file://$PROJECT_DIR$/libproject/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/libproject/google-play-services_lib/google-play-services_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/libproject/support-v4/support-v4.iml" filepath="$PROJECT_DIR$/libproject/support-v4/support-v4.iml" />
