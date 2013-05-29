@@ -1,3 +1,7 @@
 #Rimatyo
 
-Not much to see here. The README will be updated as the project progresses. Penis.
+For the time being, README.md will be used to hold random notes and comments.
+
+Todo:
+    [ ] Add waiting screen between main screen and game lobby
+    

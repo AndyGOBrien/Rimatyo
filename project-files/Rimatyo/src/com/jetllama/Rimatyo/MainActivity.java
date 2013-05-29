@@ -243,8 +243,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         getGamesClient().createRoom(rtmConfigBuilder.build());
 
 
-
-
     }
 
     //Sets the flag to prevent the screen from sleeping. Useful for things like waiting room
