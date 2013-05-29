@@ -16,24 +16,26 @@
 
 package com.jetllama.Rimatyo;
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.google.android.gms.games.GamesClient;
+import com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+import com.google.android.gms.games.multiplayer.realtime.RealTimeMessageReceivedListener;
+import com.google.android.gms.games.multiplayer.realtime.Room;
+import com.google.android.gms.games.multiplayer.realtime.RoomConfig;
+import com.google.android.gms.games.multiplayer.realtime.RoomStatusUpdateListener;
+import com.google.android.gms.games.multiplayer.realtime.RoomUpdateListener;
 import com.google.example.games.basegameutils.BaseGameActivity;
-import com.jetllama.Rimatyo.R;
 
-import com.google.android.gms.auth.GoogleAuthUtil;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import java.util.List;
 
-public class MainActivity extends BaseGameActivity implements View.OnClickListener {
+public class MainActivity extends BaseGameActivity implements View.OnClickListener, RoomUpdateListener, RealTimeMessageReceivedListener, RoomStatusUpdateListener {
 
     //Debug stag
     public final static String TAG = "RIMATYODEBUG";
@@ -48,6 +50,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     private boolean signedIn = false;
     private int currentScreen = -1;
+
+
 
     //All the buttons we need to attach a listener to
     final static int[] CLICKABLES = {
@@ -89,7 +93,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-
         return true;
     }
 
@@ -101,6 +104,55 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         super.onStart();
     }
 
+    @Override
+    public void onJoinedRoom(int statusCode, Room room) {
+        Log.d(TAG, "onJoinedRoom(" + statusCode + ", " + room + ")");
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
+            showGameError();
+            return;
+        }
+
+        showWaitingRoom(room);
+
+    }
+
+
+    //Called when room has been created
+    public void onRoomCreated(int statusCode, Room room) {
+        Log.d(TAG, "onRoomCreated(" + statusCode + ", " + room + ")");
+
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomCreated, status " + statusCode);
+            showGameError();
+            return;
+        }
+
+        showWaitingRoom(room);
+    }
+
+    //Called when room is fully connected
+    public void onRoomConnected(int statusCode, Room room) {
+        Log.d(TAG, "onRoomConnected(" + statusCode + ", " + room + ")");
+
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
+            showGameError();
+            return;
+        }
+    }
+
+    @Override
+    public void onLeftRoom(int statusCode, String s) {
+        Log.d(TAG, "onLeftRoom, code " + statusCode);
+        switchToScreen(R.id.main_menu_screen);
+
+    }
+
+    void showGameError() {
+        showAlert("Error", "Error Test");
+        switchToScreen(R.id.main_menu_screen);
+    }
 
     //-----OnClick Listeners
     public void onClick(View v){
@@ -120,6 +172,10 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
             case R.id.leaderboardButton:
                 showLeaderboards();
+                break;
+
+            case R.id.quickPlayButton:
+                startQuickGame();
                 break;
         }
 
@@ -170,5 +226,105 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             showAlert(getString(R.string.leaderboards_not_available));
         }
 
+    }
+
+    public void startQuickGame(){
+
+        allowScreenSleep(false);
+
+        //Build the room
+        Bundle autoMatchCriteria = RoomConfig.createAutoMatchCriteria(1, 3, 0);
+
+        RoomConfig.Builder rtmConfigBuilder = RoomConfig.builder(this);
+        rtmConfigBuilder.setMessageReceivedListener(this);
+        rtmConfigBuilder.setRoomStatusUpdateListener(this);
+        rtmConfigBuilder.setAutoMatchCriteria(autoMatchCriteria);
+
+        getGamesClient().createRoom(rtmConfigBuilder.build());
+
+
+
+
+    }
+
+    //Sets the flag to prevent the screen from sleeping. Useful for things like waiting room
+    public void allowScreenSleep(boolean allowSleep){
+        if(allowSleep)
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        else
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    private RoomConfig.Builder makeBasicRoomConfigBuilder() {
+        return RoomConfig.builder(this).setMessageReceivedListener(this).setRoomStatusUpdateListener(this);
+    }
+
+    @Override
+    public void onRealTimeMessageReceived(RealTimeMessage realTimeMessage) {
+
+    }
+
+    // We treat most of the room update callbacks in the same way: we update our list of
+    // participants and update the display. In a real game we would also have to check if that
+    // change requires some action like removing the corresponding player avatar from the screen,
+    // etc.
+    @Override
+    public void onPeerDeclined(Room room, List<String> arg1) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onPeerInvitedToRoom(Room room, List<String> arg1) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onPeerJoined(Room room, List<String> arg1) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onPeerLeft(Room room, List<String> peersWhoLeft) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onRoomAutoMatching(Room room) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onRoomConnecting(Room room) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onPeersConnected(Room room, List<String> peers) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onPeersDisconnected(Room room, List<String> peers) {
+        updateRoom(room);
+    }
+
+    @Override
+    public void onDisconnectedFromRoom(Room room) {
+
+    }
+
+    @Override
+    public void onConnectedToRoom(Room room) {
+
+    }
+
+    public void updateRoom(Room room){
+
+    }
+
+    public void showWaitingRoom(Room room){
+        int MIN_PLAYERS = 2;
+        Intent i = getGamesClient().getRealTimeWaitingRoomIntent(room, MIN_PLAYERS);
+        startActivityForResult(i, RC_WAITING_ROOM);
     }
 }

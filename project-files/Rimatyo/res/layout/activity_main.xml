@@ -19,51 +19,51 @@
             android:id="@+id/signin_screen"
             style="@style/LLScreen">
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textSize="60dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/darkTextColor"
-                android:textScaleX="1.1"
-                android:id="@+id/titleTextView"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkTextColor"
+            android:textScaleX="1.1"
+            android:id="@+id/titleTextView"/>
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_message"
-                android:id="@+id/loginMessageTextiView"
-                android:layout_marginTop="10dp"
-                android:lines="3"
-                android:textColor="@color/darkTextColor"
-                android:gravity="center"
-                android:layout_below="@+id/titleTextView"
-                android:layout_alignLeft="@+id/titleTextView"
-                android:layout_alignRight="@+id/titleTextView"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_message"
+            android:id="@+id/loginMessageTextiView"
+            android:layout_marginTop="10dp"
+            android:lines="3"
+            android:textColor="@color/darkTextColor"
+            android:gravity="center"
+            android:layout_below="@+id/titleTextView"
+            android:layout_alignLeft="@+id/titleTextView"
+            android:layout_alignRight="@+id/titleTextView"/>
         <ImageButton
-                android:layout_width="246dp"
-                android:layout_height="55dp"
-                android:id="@+id/GoogleSignInButton"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/google_signin_button"
-                android:adjustViewBounds="true"
-                android:layout_centerHorizontal="true"/>
+            android:layout_width="246dp"
+            android:layout_height="55dp"
+            android:id="@+id/GoogleSignInButton"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/google_signin_button"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"/>
         <ImageView
-                android:layout_width="100dp"
-                android:layout_height="90dp"
-                android:id="@+id/PlayControllerImageView"
-                android:src="@drawable/games_controller_dark_grey"
-                android:layout_above="@+id/GoogleSignInButton"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="11dp"/>
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:id="@+id/PlayControllerImageView"
+            android:src="@drawable/games_controller_dark_grey"
+            android:layout_above="@+id/GoogleSignInButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="11dp"/>
         <ImageView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/groupAvatarImageView"
-                android:src="@drawable/avatar_icon"
-                android:layout_below="@+id/loginMessageTextiView"
-                android:layout_centerHorizontal="true"/>
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/groupAvatarImageView"
+            android:src="@drawable/avatar_icon"
+            android:layout_below="@+id/loginMessageTextiView"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
     <!-- Main Menu Screen -->
@@ -81,75 +81,73 @@
             style="@style/LLScreen"
             android:visibility="visible">
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textSize="60dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/darkTextColor"
-                android:textScaleX="1.1"
-                android:id="@+id/titleTextView2"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkTextColor"
+            android:textScaleX="1.1"
+            android:id="@+id/titleTextView2"/>
         <!-- Sign out button -->
         <ImageButton
-                android:layout_width="246dp"
-                android:layout_height="55dp"
-                android:id="@+id/GoogleSignOutButton"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/google_signout_button"
-                android:adjustViewBounds="true"
-                android:layout_centerHorizontal="true"/>
+            android:layout_width="246dp"
+            android:layout_height="55dp"
+            android:id="@+id/GoogleSignOutButton"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/google_signout_button"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"/>
 
         <ImageButton
-                android:layout_width="225dp"
-                android:layout_height="70dp"
-                android:id="@+id/quickPlayButton"
-                android:background="@drawable/quickplay_button"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="22dp"
-                android:layout_below="@+id/titleTextView2"
-                android:layout_centerHorizontal="true"/>
+            android:layout_width="225dp"
+            android:layout_height="70dp"
+            android:id="@+id/quickPlayButton"
+            android:background="@drawable/quickplay_button"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/titleTextView2"
+            android:layout_centerHorizontal="true"/>
 
         <ImageButton
-                android:layout_width="225dp"
-                android:layout_height="70dp"
-                android:id="@+id/formTeamButton"
-                android:background="@drawable/formteam_button"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="27dp"
-                android:layout_below="@+id/quickPlayButton"
-                android:layout_alignLeft="@+id/quickPlayButton"/>
+            android:layout_width="225dp"
+            android:layout_height="70dp"
+            android:id="@+id/formTeamButton"
+            android:background="@drawable/formteam_button"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="27dp"
+            android:layout_below="@+id/quickPlayButton"
+            android:layout_alignLeft="@+id/quickPlayButton"/>
 
         <ImageButton
-                android:layout_width="225dp"
-                android:layout_height="80dp"
-                android:id="@+id/rankedMatchButton"
-                android:background="@drawable/rankedmatch_button"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="27dp"
-                android:layout_below="@+id/formTeamButton"
-                android:layout_alignLeft="@+id/formTeamButton"/>
+            android:layout_width="225dp"
+            android:layout_height="80dp"
+            android:id="@+id/rankedMatchButton"
+            android:background="@drawable/rankedmatch_button"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="27dp"
+            android:layout_below="@+id/formTeamButton"
+            android:layout_alignLeft="@+id/formTeamButton"/>
 
         <ImageButton
-                android:layout_width="53dp"
-                android:layout_height="72dp"
-                android:id="@+id/leaderboardButton"
-                android:background="@drawable/leaderboard_button"
-                android:adjustViewBounds="true"
-                android:layout_below="@+id/rankedMatchButton"
-                android:layout_alignLeft="@+id/GoogleSignOutButton"
-                android:layout_marginTop="18dp"/>
+            android:layout_width="53dp"
+            android:layout_height="72dp"
+            android:id="@+id/leaderboardButton"
+            android:background="@drawable/leaderboard_button"
+            android:adjustViewBounds="true"
+            android:layout_below="@+id/rankedMatchButton"
+            android:layout_alignLeft="@+id/GoogleSignOutButton"
+            android:layout_marginTop="18dp"/>
 
         <ImageButton
-                android:layout_width="85dp"
-                android:layout_height="66dp"
-                android:id="@+id/achievementButton"
-                android:background="@drawable/achievement_button"
-                android:adjustViewBounds="true"
-                android:layout_alignBottom="@+id/leaderboardButton"
-                android:layout_alignRight="@+id/rankedMatchButton"/>
-
-
+            android:layout_width="85dp"
+            android:layout_height="66dp"
+            android:id="@+id/achievementButton"
+            android:background="@drawable/achievement_button"
+            android:adjustViewBounds="true"
+            android:layout_alignBottom="@+id/leaderboardButton"
+            android:layout_alignRight="@+id/rankedMatchButton"/>
     </RelativeLayout>
 </FrameLayout>
