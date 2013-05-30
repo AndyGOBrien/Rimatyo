@@ -41,17 +41,19 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     //Debug stag
     public final static String TAG = "RIMATYODEBUG";
+    public final static int MIN_PLAYERS = 3; // 3 + original player
 
     //Request code for UI to show with startActivityForResult
     final static int RC_SELECT_PLAYERS = 10000;
     final static int RC_INVITATION_INBOX = 10001;
     final static int RC_PLAYER_LOBBY = 10002;
 
-    // request codes we use when invoking an external activity
+    // request codes we use when invoking an external activity whose result doesn't matter
     final int RC_RESOLVE = 5000, RC_UNUSED = 5001;
 
     private boolean signedIn = false;
     private int currentScreen = -1;
+
 
 
 
@@ -74,7 +76,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     };
 
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -86,7 +87,14 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     }
 
 
-    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+
+    //Called when app resumes (right after onCreate if first time)
     protected void onResume() {
         super.onResume();
         signedIn = isSignedIn();
@@ -94,16 +102,21 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     public void onStop() {
         allowScreenSleep(true);
-
         super.onStop();
     }
 
-    @Override
+    //Go to the main screen when the app is opened (or login if not logged in)
+    protected void onStart() {
+        signedIn = isSignedIn();
+        switchToScreen(R.id.main_menu_screen);
+        super.onStart();
+    }
+
+
     protected void onActivityResult(int request, int response, Intent data) {
         super.onActivityResult(request, response, data);
 
         switch(request){
-
             case RC_PLAYER_LOBBY:
                 if(response == GamesActivityResultCodes.RESULT_LEFT_ROOM || response == Activity.RESULT_CANCELED)
                     leaveRoom();
@@ -111,79 +124,10 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         }
     }
 
-    private void leaveRoom() {
-        allowScreenSleep(true);
-        Log.d(TAG, "Leaving room.");
-        switchToScreen(R.id.main_menu_screen);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    //Go to the main screen when the app is opened (or login if not logged in)
-    @Override
-    protected void onStart() {
-        signedIn = isSignedIn();
-        switchToScreen(R.id.main_menu_screen);
-        super.onStart();
-    }
-
-    @Override
-    public void onJoinedRoom(int statusCode, Room room) {
-        Log.d(TAG, "onJoinedRoom(" + statusCode + ", " + room + ")");
-        if (statusCode != GamesClient.STATUS_OK) {
-            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
-            showGameError();
-            return;
-        }
-
-        showWaitingRoom(room);
-
-    }
-
-
-    //Called when room has been created
-    public void onRoomCreated(int statusCode, Room room) {
-        Log.d(TAG, "onRoomCreated(" + statusCode + ", " + room + ")");
-
-        if (statusCode != GamesClient.STATUS_OK) {
-            Log.e(TAG, "*** Error: onRoomCreated, status " + statusCode);
-            showGameError();
-            return;
-        }
-
-        showWaitingRoom(room);
-    }
-
-    //Called when room is fully connected
-    public void onRoomConnected(int statusCode, Room room) {
-        Log.d(TAG, "onRoomConnected(" + statusCode + ", " + room + ")");
-
-        if (statusCode != GamesClient.STATUS_OK) {
-            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
-            showGameError();
-            return;
-        }
-    }
-
-    @Override
-    public void onLeftRoom(int statusCode, String s) {
-        Log.d(TAG, "onLeftRoom, code " + statusCode);
-
-        switchToScreen(R.id.main_menu_screen);
-
-    }
-
-    void showGameError() {
-        showAlert("Error", "Error Test");
-        switchToScreen(R.id.main_menu_screen);
-    }
-
-    //-----OnClick Listeners
+    /**
+     * Click listeners for all the UI elements in the menu screen
+     * @param v
+     */
     public void onClick(View v){
         switch(v.getId()){
             case R.id.GoogleSignInButton:
@@ -211,12 +155,15 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     }
 
 
+    /**
+     * Change from one screen to another
+     * @param newScreenID
+     */
     public void switchToScreen(int newScreenID){
 
         //Is the player signed in? If not, take him to login screen
         if (!signedIn)
             newScreenID = R.id.signin_screen;
-
 
         //Hide all the screens except for the one we want
         currentScreen = newScreenID;
@@ -227,8 +174,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
 
     public void onSignInFailed() {
-        Log.d(TAG, "Sign-in failed.");
-        Toast.makeText(getApplicationContext(), "Unable to sign in...", 300);
+        Log.e(TAG, "Sign-in failed.");
     }
 
 
@@ -237,32 +183,101 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         signedIn = true;
         switchToScreen(R.id.main_menu_screen);
+    }
+
+
+    /**
+     * Called when joining an existing game room
+     * @param statusCode
+     * @param room
+     */
+    public void onJoinedRoom(int statusCode, Room room) {
+        Log.d(TAG, "onJoinedRoom(" + statusCode + ", " + room + ")");
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
+            showGameError();
+            return;
+        }
+
+        showWaitingRoom(room);
 
     }
 
-    public void showAchievements() {
-        if (isSignedIn()) {
-            startActivityForResult(getGamesClient().getAchievementsIntent(), RC_UNUSED);
-        } else {
-            showAlert(getString(R.string.achievements_not_available));
+    /**
+     * Leave the game room and return to the lobby.
+     *
+     * TODO: Properly disconnect from a room instead of just changing screens
+     */
+    private void leaveRoom() {
+        allowScreenSleep(true);
+        Log.d(TAG, "Leaving room.");
+        switchToScreen(R.id.main_menu_screen);
+    }
+
+
+    /**
+     * Called when room has been initially created
+     * @param statusCode
+     * @param room
+     */
+    public void onRoomCreated(int statusCode, Room room) {
+        Log.d(TAG, "onRoomCreated(" + statusCode + ", " + room + ")");
+
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomCreated, status " + statusCode);
+            showGameError();
+            return;
+        }
+
+        showWaitingRoom(room);
+    }
+
+    /**
+     * Called when room is fully connected
+     *
+     * @param statusCode
+     * @param room
+     */
+    public void onRoomConnected(int statusCode, Room room) {
+        Log.d(TAG, "onRoomConnected(" + statusCode + ", " + room + ")");
+
+        if (statusCode != GamesClient.STATUS_OK) {
+            Log.e(TAG, "*** Error: onRoomConnected, status " + statusCode);
+            showGameError();
+            return;
         }
     }
 
-    public void showLeaderboards(){
-        if (isSignedIn()) {
-            startActivityForResult(getGamesClient().getAllLeaderboardsIntent(), RC_UNUSED);
-        } else {
-            showAlert(getString(R.string.leaderboards_not_available));
-        }
+    /**
+     * Called when voluntarily leaving the room
+     * @param statusCode
+     * @param s
+     */
+    public void onLeftRoom(int statusCode, String s) {
+        Log.d(TAG, "onLeftRoom, code " + statusCode);
+
+        switchToScreen(R.id.main_menu_screen);
+    }
+
+    /**
+     * Called when disconnected from the room
+     * @param room
+     */
+    public void onDisconnectedFromRoom(Room room) {
+        showGameError();
 
     }
 
+
+    /**
+     * Start a quick game with strangers
+     */
     public void startQuickGame(){
 
         allowScreenSleep(false);
 
         //Build the room
-        Bundle autoMatchCriteria = RoomConfig.createAutoMatchCriteria(1, 3, 0);
+        Bundle autoMatchCriteria = RoomConfig.createAutoMatchCriteria(MIN_PLAYERS, MIN_PLAYERS, 0);
 
         RoomConfig.Builder rtmConfigBuilder = RoomConfig.builder(this);
         rtmConfigBuilder.setMessageReceivedListener(this);
@@ -272,10 +287,12 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         switchToScreen(R.id.waiting_screen);
         getGamesClient().createRoom(rtmConfigBuilder.build());
 
-
     }
 
-    //Sets the flag to prevent the screen from sleeping. Useful for things like waiting room
+    /**
+     * Sets the flag to prevent the screen from sleeping. Sleeping in certain spots interrupts communication
+     * @param allowSleep
+     */
     public void allowScreenSleep(boolean allowSleep){
         if(allowSleep)
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -283,19 +300,16 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
-    private RoomConfig.Builder makeBasicRoomConfigBuilder() {
-        return RoomConfig.builder(this).setMessageReceivedListener(this).setRoomStatusUpdateListener(this);
-    }
-
-    @Override
-    public void onRealTimeMessageReceived(RealTimeMessage realTimeMessage) {
-
-    }
 
     // We treat most of the room update callbacks in the same way: we update our list of
     // participants and update the display. In a real game we would also have to check if that
     // change requires some action like removing the corresponding player avatar from the screen,
     // etc.
+
+    @Override
+    public void onRealTimeMessageReceived(RealTimeMessage realTimeMessage) {
+
+    }
     @Override
     public void onPeerDeclined(Room room, List<String> arg1) {
         updateRoom(room);
@@ -336,10 +350,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         updateRoom(room);
     }
 
-    @Override
-    public void onDisconnectedFromRoom(Room room) {
 
-    }
 
     @Override
     public void onConnectedToRoom(Room room) {
@@ -350,9 +361,38 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     }
 
+    /**
+     * Show the waiting room lobby
+     * @param room
+     */
     public void showWaitingRoom(Room room){
-        int MIN_PLAYERS = 2;
         Intent i = getGamesClient().getRealTimeWaitingRoomIntent(room, MIN_PLAYERS);
         startActivityForResult(i, RC_PLAYER_LOBBY);
+    }
+
+    /**
+     * Display an error message and return to the main screen
+     */
+    void showGameError() {
+        showAlert("Error", "Error Test");
+        switchToScreen(R.id.main_menu_screen);
+    }
+
+
+    public void showAchievements() {
+        if (isSignedIn()) {
+            startActivityForResult(getGamesClient().getAchievementsIntent(), RC_UNUSED);
+        } else {
+            showAlert(getString(R.string.achievements_not_available));
+        }
+    }
+
+    public void showLeaderboards(){
+        if (isSignedIn()) {
+            startActivityForResult(getGamesClient().getAllLeaderboardsIntent(), RC_UNUSED);
+        } else {
+            showAlert(getString(R.string.leaderboards_not_available));
+        }
+
     }
 }
