@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.games.GamesClient;
@@ -55,6 +56,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     private boolean signedIn = false;
     private int currentScreen = -1;
+    private boolean animationHasPlayed;
 
 
 
@@ -86,6 +88,10 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         setSignInMessages(getString(R.string.signing_in), getString(R.string.signing_out));
 
+        animationHasPlayed = false;
+
+
+
 
     }
 
@@ -102,23 +108,35 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         super.onResume();
         signedIn = isSignedIn();
 
-        ImageButton quickStartButton = (ImageButton)findViewById(R.id.quickPlayButton);
-        ImageButton teamButton = (ImageButton)findViewById(R.id.formTeamButton);
-        ImageButton rankedButton = (ImageButton)findViewById(R.id.rankedMatchButton);
-        ImageButton leaderButton = (ImageButton)findViewById(R.id.leaderboardButton);
-        ImageButton achievementButton = (ImageButton)findViewById(R.id.achievementButton);
+        if (!animationHasPlayed){
 
-        Animation quickPlayAnim = AnimationUtils.loadAnimation(this, R.anim.quickplay_anim);
-        Animation teamAnim = AnimationUtils.loadAnimation(this, R.anim.team_button_anim);
-        Animation rankedAnim = AnimationUtils.loadAnimation(this, R.anim.ranked_button_anim);
-        Animation leaderAnim = AnimationUtils.loadAnimation(this, R.anim.leader_button_anim);
-        Animation achievementAnim = AnimationUtils.loadAnimation(this, R.anim.achievement_button_anim);
+            ImageButton quickStartButton = (ImageButton)findViewById(R.id.quickPlayButton);
+            ImageButton teamButton = (ImageButton)findViewById(R.id.formTeamButton);
+            ImageButton rankedButton = (ImageButton)findViewById(R.id.rankedMatchButton);
+            ImageButton leaderButton = (ImageButton)findViewById(R.id.leaderboardButton);
+            ImageButton achievementButton = (ImageButton)findViewById(R.id.achievementButton);
+            TextView rimatyoText = (TextView)findViewById(R.id.titleTextView2);
+            ImageButton googleSignoutButton = (ImageButton)findViewById(R.id.GoogleSignOutButton);
 
-        quickStartButton.startAnimation(quickPlayAnim);
-        teamButton.startAnimation(teamAnim);
-        rankedButton.startAnimation(rankedAnim);
-        leaderButton.startAnimation(leaderAnim);
-        achievementButton.startAnimation(achievementAnim);
+
+            Animation quickPlayAnim = AnimationUtils.loadAnimation(this, R.anim.quickplay_anim);
+            Animation teamAnim = AnimationUtils.loadAnimation(this, R.anim.team_button_anim);
+            Animation rankedAnim = AnimationUtils.loadAnimation(this, R.anim.ranked_button_anim);
+            Animation leaderAnim = AnimationUtils.loadAnimation(this, R.anim.leader_button_anim);
+            Animation achievementAnim = AnimationUtils.loadAnimation(this, R.anim.achievement_button_anim);
+            Animation rimatyoTextAnim = AnimationUtils.loadAnimation(this, R.anim.rimatyo_text);
+            Animation googleSignoutButtonAnim = AnimationUtils.loadAnimation(this, R.anim.google_signout_button_anim);
+
+            quickStartButton.startAnimation(quickPlayAnim);
+            teamButton.startAnimation(teamAnim);
+            rankedButton.startAnimation(rankedAnim);
+            leaderButton.startAnimation(leaderAnim);
+            achievementButton.startAnimation(achievementAnim);
+            rimatyoText.startAnimation(rimatyoTextAnim);
+            googleSignoutButton.startAnimation(googleSignoutButtonAnim);
+
+            animationHasPlayed = true;
+        }
     }
 
     public void onStop() {
@@ -158,6 +176,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             case R.id.GoogleSignOutButton:
                 signOut();
                 switchToScreen(R.id.signin_screen);
+                animationHasPlayed = false;
                 break;
 
             case R.id.achievementButton:
@@ -194,6 +213,9 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         //Hide all the screens except for the one we want
         currentScreen = newScreenID;
+        for(int id : SCREENS)
+            findViewById(id).setVisibility(View.GONE);
+
         for(int id : SCREENS)
             findViewById(id).setVisibility(currentScreen == id ? View.VISIBLE : View.GONE);
 
