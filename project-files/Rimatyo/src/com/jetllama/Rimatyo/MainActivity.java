@@ -60,6 +60,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
 
 
+
+
     //All the buttons we need to attach a listener to
     final static int[] CLICKABLES = {
             R.id.GoogleSignInButton,
@@ -75,7 +77,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     final static int[] SCREENS= {
             R.id.signin_screen,
             R.id.main_menu_screen,
-            R.id.waiting_screen
+            R.id.waiting_screen,
+            R.id.empty_screen
     };
 
 
@@ -170,6 +173,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     public void onClick(View v){
         switch(v.getId()){
             case R.id.GoogleSignInButton:
+                switchToScreen(R.id.empty_screen);
                 beginUserInitiatedSignIn();
                 break;
 
@@ -208,7 +212,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     public void switchToScreen(int newScreenID){
 
         //Is the player signed in? If not, take him to login screen
-        if (!signedIn)
+        if (!signedIn && newScreenID != R.id.empty_screen)
             newScreenID = R.id.signin_screen;
 
         //Hide all the screens except for the one we want
