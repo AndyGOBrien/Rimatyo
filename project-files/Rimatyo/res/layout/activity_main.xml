@@ -127,7 +127,7 @@
             android:id="@+id/rankedMatchButton"
             android:background="@drawable/rankedmatch_button"
             android:adjustViewBounds="true"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="12dp"
             android:layout_below="@+id/formTeamButton"
             android:layout_alignLeft="@+id/formTeamButton"/>
 

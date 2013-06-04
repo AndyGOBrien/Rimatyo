@@ -23,6 +23,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 
 import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.games.GamesClient;
@@ -82,6 +85,10 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             findViewById(id).setOnClickListener(this);
 
         setSignInMessages(getString(R.string.signing_in), getString(R.string.signing_out));
+
+        ImageButton quickStartButton = (ImageButton)findViewById(R.id.quickPlayButton);
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.main_screen_animation);
+        quickStartButton.startAnimation(a);
     }
 
 
