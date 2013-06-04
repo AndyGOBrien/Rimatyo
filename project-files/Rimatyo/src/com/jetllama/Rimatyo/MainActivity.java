@@ -86,9 +86,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         setSignInMessages(getString(R.string.signing_in), getString(R.string.signing_out));
 
-        ImageButton quickStartButton = (ImageButton)findViewById(R.id.quickPlayButton);
-        Animation a = AnimationUtils.loadAnimation(this, R.anim.main_screen_animation);
-        quickStartButton.startAnimation(a);
+
     }
 
 
@@ -103,6 +101,24 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     protected void onResume() {
         super.onResume();
         signedIn = isSignedIn();
+
+        ImageButton quickStartButton = (ImageButton)findViewById(R.id.quickPlayButton);
+        ImageButton teamButton = (ImageButton)findViewById(R.id.formTeamButton);
+        ImageButton rankedButton = (ImageButton)findViewById(R.id.rankedMatchButton);
+        ImageButton leaderButton = (ImageButton)findViewById(R.id.leaderboardButton);
+        ImageButton achievementButton = (ImageButton)findViewById(R.id.achievementButton);
+
+        Animation quickPlayAnim = AnimationUtils.loadAnimation(this, R.anim.quickplay_anim);
+        Animation teamAnim = AnimationUtils.loadAnimation(this, R.anim.team_button_anim);
+        Animation rankedAnim = AnimationUtils.loadAnimation(this, R.anim.ranked_button_anim);
+        Animation leaderAnim = AnimationUtils.loadAnimation(this, R.anim.leader_button_anim);
+        Animation achievementAnim = AnimationUtils.loadAnimation(this, R.anim.achievement_button_anim);
+
+        quickStartButton.startAnimation(quickPlayAnim);
+        teamButton.startAnimation(teamAnim);
+        rankedButton.startAnimation(rankedAnim);
+        leaderButton.startAnimation(leaderAnim);
+        achievementButton.startAnimation(achievementAnim);
     }
 
     public void onStop() {
