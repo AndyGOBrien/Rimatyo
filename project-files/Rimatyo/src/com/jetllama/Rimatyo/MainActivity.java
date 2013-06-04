@@ -23,7 +23,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.games.GamesClient;
@@ -53,7 +52,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
     private boolean signedIn = false;
     private int currentScreen = -1;
-
 
 
 
@@ -149,6 +147,12 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
             case R.id.quickPlayButton:
                 startQuickGame();
+                break;
+
+            case R.id.formTeamButton:
+                //Use Team game to test the game code
+                Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
+                MainActivity.this.startActivity(gameIntent);
                 break;
         }
 
@@ -391,7 +395,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         if (isSignedIn()) {
             startActivityForResult(getGamesClient().getAllLeaderboardsIntent(), RC_UNUSED);
         } else {
-            showAlert(getString(R.string.leaderboards_not_available));
         }
 
     }

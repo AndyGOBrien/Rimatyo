@@ -2,7 +2,9 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState />
+      <GlobalState>
+        <option name="visible" value="false" />
+      </GlobalState>
     </option>
   </component>
   <component name="AndroidLayouts">
@@ -25,7 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/AndroidManifest.xml" afterPath="$PROJECT_DIR$/project-files/Rimatyo/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" afterPath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gpsdemos.iws" />
@@ -36,12 +40,12 @@
     <file path="$PROJECT_DIR$/project-files/Rimatyo/gen/com/google/android/gms/auth/sample/helloauth/BuildConfig.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369773674691" ignored="false" />
     <file path="/strings.xml" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369861368021" ignored="false" />
     <file path="/GetNameInBackgroundWithSync.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369774099278" ignored="false" />
-    <file path="/MainActivity.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369894398996" ignored="false" />
+    <file path="/MainActivity.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370368684073" ignored="false" />
     <file path="/HelloActivity.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369778313929" ignored="false" />
-    <file path="/Dummy.txt" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369892056211" ignored="false" />
+    <file path="/Dummy.txt" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370368218025" ignored="false" />
     <file path="/.gitignore" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369782312165" ignored="false" />
     <file path="/build.gradle" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369791243612" ignored="false" />
-    <file path="/a.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369786218168" ignored="false" />
+    <file path="/a.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370288611370" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369786680458" ignored="false" />
     <file path="/activity_main.xml" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369861396113" ignored="false" />
     <file path="/quick_play_button" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369793499027" ignored="false" />
@@ -54,6 +58,9 @@
     <file path="$PROJECT_DIR$/project-files/Rimatyo/gen/com/jetllama/Rimatyo/Manifest.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369859873958" ignored="false" />
     <file path="/TODO.md" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369860158151" ignored="false" />
     <file path="/README.md" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1369864358666" ignored="false" />
+    <file path="/GameActivity.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370368414527" ignored="false" />
+    <file path="/PuzzleView.java" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370370428542" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" time="1370376502550" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +80,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -109,7 +117,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -118,7 +125,61 @@
     <favorites_list name="gpsdemos" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="127" column="7" selection-start="4243" selection-end="4243" vertical-scroll-proportion="-5.230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/GameActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="43" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PuzzleView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="37" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_layout.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="180" column="0" selection-start="7919" selection-end="7919" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -140,9 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/libproject/BaseGameUtils/build.gradle" />
-        <option value="$PROJECT_DIR$/project-files/Rimatyo/build.gradle" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/drawable/quick_play_button" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/drawable/quickplay_button.xml" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/drawable/formteam_button.xml" />
@@ -155,7 +213,10 @@
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/GameActivity.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" />
       </list>
     </option>
   </component>
@@ -182,6 +243,9 @@
             <id>Android Lint</id>
           </State>
           <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
             <id>GPath inspectionsGroovy</id>
           </State>
           <State>
@@ -191,10 +255,22 @@
             <id>Groovy</id>
           </State>
           <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
             <id>Internationalization issues</id>
           </State>
           <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
             <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
           </State>
           <State>
             <id>Probable bugs</id>
@@ -206,6 +282,11 @@
             <id>Security issues</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -235,6 +316,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rimatyo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,15 +363,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Rimatyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rimatyo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rimatyo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rimatyo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -288,12 +401,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/out/production/Rimatyo/Rimatyo.apk" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="ExportedApkPath" value="$USER_HOME$/Desktop/rimatyo.apk" />
     <property name="ExportedModule" value="Rimatyo" />
     <property name="last_opened_file_path" value="$USER_HOME$/.android/debug.keystore" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -305,7 +418,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="editor.preferences.import" />
     <property name="project.structure.side.proportion" value="0.25492468" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="42f73b050f109fef" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -499,11 +612,22 @@
       <workItem from="1369864419109" duration="18000" />
       <workItem from="1369867255420" duration="5692000" />
       <workItem from="1369892054838" duration="2417000" />
+      <workItem from="1369924149010" duration="3130000" />
+      <workItem from="1370024827627" duration="1000" />
+      <workItem from="1370025472728" duration="1000" />
+      <workItem from="1370135417161" duration="1000" />
+      <workItem from="1370209604317" duration="17000" />
+      <workItem from="1370209639784" duration="4000" />
+      <workItem from="1370226474456" duration="1354000" />
+      <workItem from="1370288577180" duration="198000" />
+      <workItem from="1370288794497" duration="844000" />
+      <workItem from="1370363442764" duration="647000" />
+      <workItem from="1370367828964" duration="3807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44690000" />
+    <option name="totallyTimeSpent" value="54694000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -529,7 +653,10 @@
     <frame x="10" y="22" width="1900" height="988" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Palette&#9;" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.110032365" sideWeight="0.8029954" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22599784" sideWeight="0.8029954" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.8029954" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34101382" sideWeight="0.3759439" order="8" side_tool="true" content_ui="tabs" />
@@ -537,17 +664,14 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17206042" sideWeight="0.2845622" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33064517" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3402299" sideWeight="0.6240561" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33986175" sideWeight="0.6240561" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25576037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973032" sideWeight="0.6705069" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955772" sideWeight="0.7442396" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21413161" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16504854" sideWeight="0.65898615" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19770116" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.110032365" sideWeight="0.80184335" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16504854" sideWeight="0.8029954" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1970046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22599784" sideWeight="0.80184335" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.7442396" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -616,38 +740,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/drawable/quick_play_button_graphic.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/drawable/google_signin_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/values/ids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="600" selection-end="600" vertical-scroll-proportion="0.23159145" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/drawable/quickplay_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="453" selection-end="453" vertical-scroll-proportion="0.12470309" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/drawable/formteam_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="0" selection-end="450" vertical-scroll-proportion="0.12470309" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/drawable/rankedmatch_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="65" selection-start="426" selection-end="426" vertical-scroll-proportion="0.10688836" />
@@ -670,13 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#693#711#0" expanded="false" />
-            <element signature="e#857#873#0" expanded="false" />
-            <element signature="e#983#1001#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="23" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libproject/google-play-services_lib/libs/google-play-services.jar!/com/google/android/gms/games/multiplayer/realtime/RoomConfig.class">
@@ -684,38 +770,74 @@
         <state line="36" column="131" selection-start="1877" selection-end="1893" vertical-scroll-proportion="-8.72" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="47" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.23214285">
-          <folding>
-            <element signature="e#3048#3078#0" expanded="true" />
-            <element signature="e#3080#3111#0" expanded="true" />
-            <element signature="e#10829#10875#0" expanded="true" />
-            <element signature="e#11090#11136#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="17" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.30357143" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.05357143">
+        <state line="5" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.089073636" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libproject/BaseGameUtils/src/com/google/example/games/basegameutils/BaseGameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="34" selection-start="1965" selection-end="1965" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libproject/support-v4/android-support-v4.jar!/android/support/v4/app/FragmentActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="16" selection-start="3859" selection-end="3859" vertical-scroll-proportion="0.40636474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="7" selection-start="4243" selection-end="4243" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="37" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="7919" selection-end="7919" vertical-scroll-proportion="0.8892989">
+      <provider editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="7919" selection-end="7919" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.30357143">
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
