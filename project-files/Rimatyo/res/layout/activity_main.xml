@@ -122,6 +122,7 @@
             style="@style/LLScreen"
             android:visibility="visible"
             android:layout_gravity="right|center_vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -191,6 +192,125 @@
             android:adjustViewBounds="true"
             android:layout_alignBottom="@+id/leaderboardButton"
             android:layout_alignRight="@+id/rankedMatchButton"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test"
+                android:id="@+id/testButton"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
     </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/app_background"
+            tools:context=".MainActivity"
+            android:hapticFeedbackEnabled="false"
+            style="@style/LLScreen"
+            android:id="@+id/test_game_screen"
+            android:layout_gravity="left|top"
+            >
+
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Block Puzzle"
+                android:id="@+id/block_puzzle"
+                android:layout_alignTop="@+id/missing_number"
+                android:layout_toRightOf="@+id/missing_number"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Confusion"
+                android:id="@+id/color_confusion"
+                android:layout_marginTop="11dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/block_puzzle"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Missing Number"
+                android:id="@+id/missing_number"
+                android:layout_alignTop="@+id/color_confusion"
+                android:layout_alignParentLeft="true"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maze Puzzle"
+                android:id="@+id/maze_puzzle"
+                android:layout_below="@+id/missing_number"
+                android:layout_alignLeft="@+id/missing_number"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number Color"
+                android:id="@+id/number_color"
+                android:layout_below="@+id/block_puzzle"
+                android:layout_toRightOf="@+id/maze_puzzle"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shape Construction"
+                android:id="@+id/shape_construction"
+                android:layout_below="@+id/block_puzzle"
+                android:layout_toRightOf="@+id/number_color"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shape Memory"
+                android:id="@+id/shape_memory"
+                android:layout_below="@+id/maze_puzzle"
+                android:layout_toLeftOf="@+id/number_color"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slider Match"
+                android:id="@+id/slider_match"
+                android:layout_below="@+id/maze_puzzle"
+                android:layout_toRightOf="@+id/maze_puzzle"/>
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tile Matcher"
+                android:id="@+id/tile_matcher"
+                android:layout_below="@+id/number_color"
+                android:layout_toRightOf="@+id/number_color"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Menu"
+                android:id="@+id/mainMenuButton"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/color_confusion"
+                android:layout_marginBottom="25dp"/>
+    </RelativeLayout>
+
 </FrameLayout>
 

@@ -78,7 +78,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             R.id.signin_screen,
             R.id.main_menu_screen,
             R.id.waiting_screen,
-            R.id.empty_screen
+            R.id.empty_screen,
+            R.id.test_game_screen
     };
 
 
@@ -127,7 +128,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             Animation rankedAnim = AnimationUtils.loadAnimation(this, R.anim.ranked_button_anim);
             Animation leaderAnim = AnimationUtils.loadAnimation(this, R.anim.leader_button_anim);
             Animation achievementAnim = AnimationUtils.loadAnimation(this, R.anim.achievement_button_anim);
-            Animation rimatyoTextAnim = AnimationUtils.loadAnimation(this, R.anim.rimatyo_text);
+            Animation rimatyoTextAnim = AnimationUtils.loadAnimation(this, R.anim.rimatyo_text_anim);
             Animation googleSignoutButtonAnim = AnimationUtils.loadAnimation(this, R.anim.google_signout_button_anim);
 
             quickStartButton.startAnimation(quickPlayAnim);
@@ -199,6 +200,14 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
                 //Use Team game to test the game code
                 Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
                 MainActivity.this.startActivity(gameIntent);
+                break;
+
+            case R.id.testButton:
+                switchToScreen(R.id.test_game_screen);
+                break;
+
+            case R.id.mainMenuButton:
+                switchToScreen(R.id.main_menu_screen);
                 break;
         }
 
