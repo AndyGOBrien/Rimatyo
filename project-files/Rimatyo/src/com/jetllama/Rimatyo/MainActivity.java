@@ -106,8 +106,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         animationHasPlayed = false;
 
         //Tired of clicking
-        Intent gameIntentMissingNumber = new Intent(MainActivity.this, GameActivity.class);
-        MainActivity.this.startActivity(gameIntentMissingNumber);
+       // Intent gameIntentMissingNumber = new Intent(MainActivity.this, GameActivity.class);
+       // MainActivity.this.startActivity(gameIntentMissingNumber);
 
 
 
@@ -246,9 +246,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         //Hide all the screens except for the one we want
         currentScreen = newScreenID;
-        for(int id : SCREENS)
-            findViewById(id).setVisibility(View.GONE);
-
         for(int id : SCREENS)
             findViewById(id).setVisibility(currentScreen == id ? View.VISIBLE : View.GONE);
 

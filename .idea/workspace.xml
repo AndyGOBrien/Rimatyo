@@ -28,8 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" afterPath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" afterPath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" afterPath="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gpsdemos.iws" />
@@ -141,10 +139,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="25" selection-start="1669" selection-end="1681" vertical-scroll-proportion="0.0">
+            <state line="109" column="9" selection-start="3864" selection-end="3864" vertical-scroll-proportion="0.7395994">
               <folding />
             </state>
           </provider>
@@ -168,7 +166,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_layout.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
@@ -214,10 +212,10 @@
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/anim/google_signout_button_anim.xml" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/numberPadMemory.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -642,12 +640,12 @@
       <workItem from="1370402067247" duration="5487000" />
       <workItem from="1370448440298" duration="2765000" />
       <workItem from="1370451247956" duration="710000" />
-      <workItem from="1370453880802" duration="389000" />
+      <workItem from="1370453880802" duration="734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77592000" />
+    <option name="totallyTimeSpent" value="77937000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -671,10 +669,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1890" height="988" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10737527" sideWeight="0.80990785" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22396964" sideWeight="0.80990785" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10737527" sideWeight="0.80990785" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22396964" sideWeight="0.80990785" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -689,7 +687,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955772" sideWeight="0.7442396" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21413161" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22234273" sideWeight="0.80990785" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19009216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19009216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37727603" sideWeight="0.8090379" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -827,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="25" selection-start="1669" selection-end="1681" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="30" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0">
@@ -854,6 +845,13 @@
       </provider>
       <provider editor-type-id="text-editor">
         <state line="15" column="4" selection-start="510" selection-end="511" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="9" selection-start="3864" selection-end="3864" vertical-scroll-proportion="0.7395994">
           <folding />
         </state>
       </provider>
