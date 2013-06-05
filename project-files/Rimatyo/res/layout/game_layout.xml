@@ -6,10 +6,11 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <view
-            android:layout_width="wrap_content"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
             class="com.jetllama.Rimatyo.PuzzleView"
             android:id="@+id/view"
-            android:layout_gravity="center_horizontal|bottom"/>
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="-82dp"/>
 
 </FrameLayout>

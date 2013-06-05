@@ -70,7 +70,18 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             R.id.formTeamButton,
             R.id.rankedMatchButton,
             R.id.achievementButton,
-            R.id.leaderboardButton
+            R.id.leaderboardButton,
+            R.id.testButton,
+            R.id.block_puzzle,
+            R.id.color_confusion,
+            R.id.block_puzzle,
+            R.id.maze_puzzle,
+            R.id.missing_number,
+            R.id.number_color,
+            R.id.shape_construction,
+            R.id.shape_memory,
+            R.id.slider_match,
+            R.id.tile_matcher
     };
 
     //All the screens we have
@@ -94,6 +105,9 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         animationHasPlayed = false;
 
+        //Tired of clicking
+        Intent gameIntentMissingNumber = new Intent(MainActivity.this, GameActivity.class);
+        MainActivity.this.startActivity(gameIntentMissingNumber);
 
 
 
@@ -197,9 +211,9 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
                 break;
 
             case R.id.formTeamButton:
-                //Use Team game to test the game code
-                Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
-                MainActivity.this.startActivity(gameIntent);
+                break;
+
+            case R.id.rankedMatchButton:
                 break;
 
             case R.id.testButton:
@@ -208,6 +222,12 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
             case R.id.mainMenuButton:
                 switchToScreen(R.id.main_menu_screen);
+                break;
+
+            case R.id.shape_memory:
+                //Use Team game to test the game code
+                Intent gameIntentMissingNumber = new Intent(MainActivity.this, GameActivity.class);
+                MainActivity.this.startActivity(gameIntentMissingNumber);
                 break;
         }
 
