@@ -28,32 +28,26 @@ public class PuzzleView extends PuzzleBase{
     }
 
 
-    protected void initialize(Context context) {
-        shapeArray = new Shape[5];
-
-        //Create 4 shapes + surprise shape
-        shapeArray[0] = new Shape(Color.RED, 0);
-        shapeArray[1] = new Shape(Color.GREEN, 1);
-        shapeArray[2] = new Shape(Color.CYAN, 2);
-        shapeArray[3] = new Shape(Color.YELLOW, 3);
-
-        shapeArray[4] = new Shape(Color.RED, 4);
-
-    }
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
 
         int width = getWidth();
         int height = getHeight();
         Paint p = new Paint();
         p.setColor(Color.RED);
 
-        //Rect rect = new Rect(width/)
 
-        canvas.drawRect(new Rect(width/2,200, 500,500), p);
-        Log.d(MainActivity.TAG, "WIDTH: " + width/2);
+        canvas.drawRect(new Rect(width/4,height / 4, width/4 + width/5 ,height/4 + height/5 ), p);
+       // canvas.drawRect(new Rect(width/4 + width /4 ,height / 4, width/4 + width/5 ,height/4 + height/5 ), p);
+
+       // canvas.drawRect(new Rect(width/4,height / 4, width/4 + width/5 ,height/4 + height/5 ), p);
+       // canvas.drawRect(new Rect(width/4,height / 4, width/4 + width/5 ,height/4 + height/5 ), p);
+
+
+        //canvas.drawRect(new Rect(width/2,200, 500,500), p);
+        Log.d(MainActivity.TAG, "WIDTH: " + width / 2);
     }
 
 
@@ -70,6 +64,7 @@ public class PuzzleView extends PuzzleBase{
         }
 
         public void drawSelf(Canvas c){
+
 
         }
     }

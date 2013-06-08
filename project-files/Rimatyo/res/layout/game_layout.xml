@@ -3,14 +3,45 @@
 <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <view
-            android:layout_width="315dp"
+    <com.jetllama.Rimatyo.PuzzleView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="122dp"
             android:layout_height="wrap_content"
-            class="com.jetllama.Rimatyo.PuzzleView"
-            android:id="@+id/view"
+            android:id="@+id/remoteGameView1"
+            android:layout_gravity="left|top"
+            android:clickable="false"
+            android:background="@color/appBackgroundColor"
+            app:localView="false"/>
+    <com.jetllama.Rimatyo.PuzzleView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/remoteGameView2"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@color/appBackgroundColor"
+            app:localView="false"/>
+    <com.jetllama.Rimatyo.PuzzleView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/remoteGameView3"
+            android:layout_gravity="right|top"
+            android:background="@color/appBackgroundColor"
+            app:localView="false"/>
+
+    <com.jetllama.Rimatyo.PuzzleView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/localGameView"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginTop="-82dp"/>
+            android:clickable="false"
+            android:background="@color/appBackgroundColor"
+            android:focusableInTouchMode="false"
+            app:localView="true"/>
+
 
 </FrameLayout>
