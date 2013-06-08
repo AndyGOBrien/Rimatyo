@@ -2,6 +2,8 @@ package com.jetllama.Rimatyo;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +17,7 @@ public class PuzzleBase extends View {
 
     protected boolean localView;
     protected int CURRENT_STATE = 0;
+    Paint borderPaint;
 
 
     public PuzzleBase(Context context) {
@@ -40,6 +43,9 @@ public class PuzzleBase extends View {
         //Extract info passed through XML layout
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PuzzleBase);
         localView = Boolean.parseBoolean(ta.getString(R.styleable.PuzzleBase_localView));
+
+        borderPaint = new Paint();
+        borderPaint.setStyle(Paint.Style.STROKE);
     }
 
     @Override
@@ -52,4 +58,9 @@ public class PuzzleBase extends View {
                 parentWidth, (int) (parentWidth * 1.77));
     }
 
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawRect(0, 0, getWidth()-1, getHeight()-1, borderPaint);
+    }
 }

@@ -18,6 +18,12 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
+        <config>
+          <device>Galaxy Nexus</device>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
@@ -27,8 +33,6 @@
     <list default="true" id="73f9e3af-bc21-44b0-bdb5-2a01bef270f6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java" afterPath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" afterPath="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" afterPath="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gpsdemos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,11 +103,11 @@
     <leaf>
       <file leaf-file-name="game_layout.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="33" selection-start="689" selection-end="689" vertical-scroll-proportion="0.36923078" vertical-offset="0" max-vertical-offset="780">
+          <provider editor-type-id="text-editor">
+            <state line="34" column="4" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -112,7 +116,7 @@
       <file leaf-file-name="PuzzleView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="3" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+            <state line="62" column="0" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-15.0" vertical-offset="465" max-vertical-offset="1365">
               <folding />
             </state>
           </provider>
@@ -121,7 +125,7 @@
       <file leaf-file-name="PuzzleBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+            <state line="46" column="34" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -171,9 +175,9 @@
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/MainActivity.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
-        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java" />
         <option value="$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java" />
+        <option value="$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java" />
       </list>
     </option>
   </component>
@@ -396,6 +400,7 @@
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="VirtualJB" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -654,7 +659,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10737527" sideWeight="0.80990785" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22396964" sideWeight="0.80990785" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27819955" sideWeight="0.812212" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27819955" sideWeight="0.812212" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34101382" sideWeight="0.3759439" order="8" side_tool="true" content_ui="tabs" />
@@ -820,24 +825,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+        <state line="46" column="34" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="975">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/src/com/jetllama/Rimatyo/PuzzleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="3" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+        <state line="62" column="0" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-15.0" vertical-offset="465" max-vertical-offset="1365">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project-files/Rimatyo/res/layout/game_layout.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="689" selection-end="689" vertical-scroll-proportion="0.36923078" vertical-offset="0" max-vertical-offset="780">
+      <provider editor-type-id="text-editor">
+        <state line="34" column="4" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
