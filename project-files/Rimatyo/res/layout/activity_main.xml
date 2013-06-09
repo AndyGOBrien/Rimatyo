@@ -80,7 +80,6 @@
             android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
-    <!-- Main Menu Screen -->
     <!-- Waiting Screen -->
     <RelativeLayout
             android:layout_width="match_parent"
@@ -104,10 +103,11 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/darkTextColor"
             android:textScaleX="1.1"
-            android:id="@+id/waitingText"/>
+            android:id="@+id/waitingText"
+                />
 
             </RelativeLayout>
-
+    <!-- Main Menu Screen -->
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -120,8 +120,8 @@
             android:hapticFeedbackEnabled="false"
             android:id="@+id/main_menu_screen"
             style="@style/LLScreen"
-            android:visibility="visible"
-            android:layout_gravity="right|center_vertical">
+            android:layout_gravity="right|center_vertical"
+            android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -203,7 +203,7 @@
                 android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
-
+    <!-- Button Puzzle screen -->
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

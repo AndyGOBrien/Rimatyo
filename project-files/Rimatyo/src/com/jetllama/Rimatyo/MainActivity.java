@@ -60,8 +60,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
 
 
-
-
     //All the buttons we need to attach a listener to
     final static int[] CLICKABLES = {
             R.id.GoogleSignInButton,
@@ -262,6 +260,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
         signedIn = true;
         switchToScreen(R.id.main_menu_screen);
+
+        Log.d(TAG, "Player:" +this.getGamesClient().getCurrentPlayer());
     }
 
 
